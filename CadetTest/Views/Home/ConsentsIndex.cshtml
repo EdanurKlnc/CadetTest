@@ -1,0 +1,113 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+@using CadetTest.Entities
+@model List<Consent>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ConsentsIndex</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 3px solid blue;
+            text-align: center;
+            padding: 3px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #a0a0a0;
+        }
+
+        .emptyRow td {
+            background-color: black !important;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    @if (TempData["CreateSuccessMsg"] != null)
+    {
+        <div style="margin:20px 50px 50px 20px">
+            <h4 style="color:lightgreen">@TempData["CreateSuccessMsg"]</h4>
+        </div>
+    }
+    @if (TempData["EditErrorMsg"] != null)
+    {
+        <div style="margin:20px 50px 50px 20px">
+            <h4 style="color:red">
+                @TempData["EditErrorMsg"])
+            </h4>
+        </div>
+    }
+
+    @if (TempData["EditSuccessMsg"] != null)
+    {
+        <div style="margin:20px 50px 50px 20px">
+            <h4 style="color:lightgreen">@TempData["EditSuccessMsg"]</h4>
+        </div>
+    }
+    <div class="col col-md-9" style="margin-left:auto; margin-right:auto;">
+        <a href="/Home/Create">
+            <b>Yeni Kayıt Ekle</b>
+        </a>
+        <table>
+            <tr>
+                <td>id</td>
+                <td>type</td>
+                <td>recipient</td>
+                <td>status</td>
+                <td>recipientType</td>
+                <td>İşlem</td>
+            </tr>
+            @{
+                int sayac = 0;
+            }
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                sayac++;
+
+                if (sayac % 11 == 0)
+                {
+                    <tr class="emptyRow">
+                        <td colspan="6">
+                            <hr sstyle="border: 3px solid blue;" />
+                        </td>
+
+                    </tr>
+                    i--;
+                }
+                else
+                {
+                    <tr>
+                        <td>@Model[i].Id</td>
+                        <td>@Model[i].Type</td>
+                        <td>@Model[i].Recipient</td>
+                        <td>@Model[i].Status</td>
+                        <td>@Model[i].RecipientType</td>
+                        <td>
+                            <a href="/Home/Edit/@Model[i].Id">
+                                Düzenle
+                            </a>
+                            <a href="/Home/Edit/@Model[i].Id">
+                                Sil
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+
+</body>
+</html>

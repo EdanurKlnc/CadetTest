@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+<div class="text-center">
+    <div class="col col-md-6" style="margin-left:auto; margin-right:auto; background-color:darkblue; border-radius:5px">
+        <h6 class="display-4" style="color:white;font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size:28px;font-weight:bold
+">
+            Edanur Kılınç
+        </h6>
+        <a href="/Home/ConsentsIndex"><h4 style="color:red">Diğer Sayfaya Gitmek İçin Tıklayınız...</h4></a>
+    </div>
+    <h1 class="display-4">Hoşgeldiniz!</h1>
+    <hr />
+    <p>Bu uygulama üzerinde yer alan API servislerini kullanarak bir ekran oluşturmanız beklenmektedir.</p>
+    <p>API servisleri dokumanina <a href="http://localhost:26173/swagger" target="_blank">http://localhost:26173/swagger</a> adresinden ulasabilirsiniz.</p>
+
+    <p>Düzenleyeceğiniz ekran <a href="http://localhost:26173/frontend.html" target="_blank">http://localhost:26173/frontend.html</a>. Calisma dosyasi "/wwwroot/frontend.html".</p>
+    <p>
+        Bu ekranda Consents metodu ile okuyacaginiz kayitlari bir html tabloya yazmaniz beklenmektedir. Database tablosunda 1000 adet kayit mevcuttur.
+        Consents metodu ile 10 kayit okuyunuz ekranda tabloya yaziniz; sonrasinda ekrandaki tabloya bir satir ekleyip, Recipient alanina saati yaziniz ve bir sonraki 10'lu paketi okuyunuz ve bu donguyu tum kayitlar tamamlanincaya kadar surdurunuz.
+        Ekranda olusacak tabloda Id'si en kucuk olan kayitlar tablonun en altinda yer almalidir.
+    </p>
+    <p>
+        2. faz olarak ise, gelistiricinin beckend tarafinda Entityframework, Linq teknolojilerini kullanarak CRUD API metotlari olusturma konusunda hakimiyeti gorulmek istenmektedir.
+    </p>
+    <p>
+        Bu amacla, birinci bolumde olusturulan sayfa uzerinde olusturacaklari butonlar vasitasi ile "Yeni Kayit Ekleme", "Mevcut Kaydi Guncelleme", "Mevcut Kaydi Silme" ve bu islemleri beckend tarafinda gerceklestirecek API metotlarini yazmasi beklenmektedir.
+    </p>
+    <p>
+        Frontend'de, 3 islem icin de tabloda ilgili satirin dinamik sekilde eklenmesi/guncellenmesi/silinmesi <u>istenmektedir</u>. Islem sonrasi sayfanin yeniden yuklenmesi veya tum verinin yeniden cekilmek suretiyle tablonun guncellenmesi <u>istenmemektedir</u>.
+    </p>
+    <p>Ekran gelistirmesi sirasinda sadece javascript, html dome elementleri ve css kullanilabilir. Herhangi bir framework ve hazir UI element kullanilmayacaktir.</p>
+    <p>Consents metoduna erisim icin User/Authenticate metodunu kullanabilirsiniz. Kullanici adi ve sifre icin Startup.cs dosyasina bakiniz. </p>
+    <p>Kolay gelsin,</p>
+    <p>Bilmed</p>
+</div>

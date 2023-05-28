@@ -1,0 +1,72 @@
+﻿@model CadetTest.Entities.Consent
+
+@{
+    Layout = "_Layout";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+       <style>
+   
+        .row{
+           margin-left:auto;
+           margin-right:auto;
+           background-color:darkgray;
+           border-radius:10px;
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <h4>Yeni Kayıt Ekle</h4>
+    <hr />
+
+
+
+    @if (TempData["CreateSuccessMsg"] != null)
+    {
+        <div style="margin:20px 50px 50px 20px">
+            <h4 style="color:lightgreen">
+                @ViewBag.Error
+            </h4>
+        </div>
+    }
+    <div class="row" >
+        <div class="col-md-9" >
+            <form action="Create" method="post">
+
+                <div class="form-group">
+                    <label class="control-label">Type</label>
+                    <input name="Type" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Recipient</label>
+                    <input name="Recipient" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Status</label>
+                    <input name="Status" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label">RecipientType</label>
+                    <input name="RecipientType" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="KAYDET" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a href="/Home/ConsentsIndex">Listeye Geri Dön</a>
+    </div>
+
+</body>
+</html>
